@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "cleanupPeriodDays": 30,
+  "permissions": {
+    "allow": [
+      "Bash(awk:*)",
+      "Bash(cat:*)",
+      "Bash(cd:*)",
+      "Bash(ci:*)",
+      "Bash(code:*)",
+      "Bash(echo:*)",
+      "Bash(fa run:*)",
+      "Bash(find:*)",
+      "Bash(flake8:*)",
+      "Bash(gh:*)",
+      "Bash(git:*)",
+      "Bash(grep:*)",
+      "Bash(head:*)",
+      "Bash(ls:*)",
+      "Bash(npm:*)",
+      "Bash(npx:*)",
+      "Bash(pre-commit:*)",
+      "Bash(pwd)",
+      "Bash(pyright:*)",
+      "Bash(pytest:*)",
+      "Bash(rg:*)",
+      "Bash(ruff:*)",
+      "Bash(sed:*)",
+      "Bash(tail:*)",
+      "Bash(yarn:*)",
+      "Glob",
+      "Grep",
+      "Read",
+      "Skill(commit)",
+      "WebFetch(domain:api.github.com)",
+      "WebFetch(domain:code.claude.com)",
+      "WebFetch(domain:community.spotify.com)",
+      "WebFetch(domain:developer.spotify.com)",
+      "WebFetch(domain:docs.claude.com)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:open.spotify.com)",
+      "WebSearch",
+      "Write(/tmp/**)"
+    ],
+    "deny": [],
+    "ask": []
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [],
+  "hooks": {
+    "PostToolUse": []
+  }
+}

@@ -1,0 +1,93 @@
+[
+  {
+    "id": "back-in-black",
+    "title": "Back in Black",
+    "artist": "AC/DC",
+    "spotifyId": "6mUdeDZCsExyJLMdAfDuwh",
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273ff191d7fbdb5a13eaf84132b"
+  },
+  {
+    "id": "number-of-the-beast",
+    "title": "The Number of the Beast",
+    "artist": "Iron Maiden",
+    "spotifyId": "1GmhZDrn15PUncSANUoteo",
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b2730910e39b1092e8ec44626aa3"
+  },
+  {
+    "id": "nightfall-in-middle-earth",
+    "title": "Nightfall in Middle-Earth",
+    "artist": "Blind Guardian",
+    "spotifyId": "3xYNQ0WHbe15Jxj8omO8cA",
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b27355d00a84eaa247ef1dacc46d"
+  },
+  {
+    "id": "silence",
+    "title": "Silence",
+    "artist": "Sonata Arctica",
+    "spotifyId": "4gJtPkYcoxDsCJ94RXw5bQ",
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273a2a3bc21eee1f7caf85d0226"
+  },
+  {
+    "id": "inhuman-rampage",
+    "title": "Inhuman Rampage",
+    "artist": "DragonForce",
+    "spotifyId": "2IKYoYVdXmTQwxBDpOSzpU",
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273151810c4b90c95ca4e429773"
+  },
+  {
+    "id": "paranoid",
+    "title": "Paranoid",
+    "artist": "Black Sabbath",
+    "spotifyId": "6r7LZXAVueS5DqdrvXJJK7",
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273d5fccf9ce08b6a1e7d12a222"
+  },
+  {
+    "id": "abbey-road",
+    "title": "Abbey Road",
+    "artist": "The Beatles",
+    "spotifyId": "0ETFjACtuP2ADo6LFhL6HN",
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273dc30583ba717007b00cceb25"
+  },
+  {
+    "id": "appetite-for-destruction",
+    "title": "Appetite for Destruction",
+    "artist": "Guns N' Roses",
+    "spotifyId": "28yHV3Gdg30AiB8h8em1eW",
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b27321ebf49b3292c3f0f575f0f5"
+  },
+  {
+    "id": "let-it-bleed",
+    "title": "Let It Bleed",
+    "artist": "The Rolling Stones",
+    "spotifyId": "4l4u9e9jSbotSXNjYfOugy",
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b2732af30c881bb23cfb82a8cf99"
+  },
+  {
+    "id": "mandrake",
+    "title": "Mandrake",
+    "artist": "Edguy",
+    "spotifyId": "2S5whZS0ouI2rHct9VJuK5",
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273ed44479d621cb05e1ed6775b"
+  },
+  {
+    "id": "master-of-puppets",
+    "title": "Master of Puppets",
+    "artist": "Metallica",
+    "spotifyId": "2Lq2qX3hYhiuPckC8Flj21",
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273668e3aca3167e6e569a9aa20"
+  },
+  {
+    "id": "holy-diver",
+    "title": "Holy Diver",
+    "artist": "Dio",
+    "spotifyId": "2ivNJLSx8Rbvnsvcn01Yt3",
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b2732457ab409ae106f8ae1dff89"
+  },
+  {
+    "id": "kpop-demon-hunters",
+    "title": "KPop Demon Hunters (Soundtrack from the Netflix Film)",
+    "artist": "KPop Demon Hunters Cast",
+    "spotifyId": "14JkAa6IiFaOh5s0nMyMU9",
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b2734dcb6c5df15cf74596ab25a4"
+  }
+]
