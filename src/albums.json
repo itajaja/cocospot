@@ -89,5 +89,12 @@
     "artist": "KPop Demon Hunters Cast",
     "spotifyId": "14JkAa6IiFaOh5s0nMyMU9",
     "coverUrl": "https://i.scdn.co/image/ab67616d0000b2734dcb6c5df15cf74596ab25a4"
+  },
+  {
+    "id": "ramones",
+    "title": "Ramones",
+    "artist": "Ramones",
+    "spotifyId": "7u31R0chlCbztAqHlEEQM6",
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b2733935c39bea149ac15c83c41a"
   }
 ]
