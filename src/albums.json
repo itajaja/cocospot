@@ -159,5 +159,12 @@
     "artist": "Daft Punk",
     "spotifyId": "2noRn2Aes5aoNVsU6iWThc",
     "coverUrl": "https://i.scdn.co/image/ab67616d0000b2732c25dad9f8fd54652f7ba5df"
+  },
+  {
+    "id": "somewhere-far-beyond",
+    "title": "Somewhere Far Beyond",
+    "artist": "Blind Guardian",
+    "spotifyId": "2S79BdT0edHAPVlcmviWZv",
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b2735ca0882bea44458e58f59ca9"
   }
 ]
