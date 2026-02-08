@@ -1,8 +1,34 @@
 import path from "path";
+import fs from "fs";
 import { fileURLToPath } from "url";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+class CopyPublicPlugin {
+  apply(compiler) {
+    compiler.hooks.afterEmit.tapAsync("CopyPublicPlugin", (compilation, callback) => {
+      const publicDir = path.resolve(__dirname, "public");
+      const outDir = compiler.options.output.path;
+      const copyRecursive = (src, dest) => {
+        for (const entry of fs.readdirSync(src, { withFileTypes: true })) {
+          const srcPath = path.join(src, entry.name);
+          const destPath = path.join(dest, entry.name);
+          if (entry.isDirectory()) {
+            fs.mkdirSync(destPath, { recursive: true });
+            copyRecursive(srcPath, destPath);
+          } else {
+            fs.copyFileSync(srcPath, destPath);
+          }
+        }
+      };
+      if (fs.existsSync(publicDir)) {
+        copyRecursive(publicDir, outDir);
+      }
+      callback();
+    });
+  }
+}
 
 export default {
   entry: "./src/main.tsx",
@@ -40,10 +66,14 @@ export default {
     new HtmlWebpackPlugin({
       template: "./index.html",
     }),
+    new CopyPublicPlugin(),
   ],
   devServer: {
     port: 3456,
     hot: true,
     historyApiFallback: true,
+    static: {
+      directory: path.resolve(__dirname, "public"),
+    },
   },
 };
