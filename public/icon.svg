@@ -1,8 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
   <rect width="512" height="512" rx="96" fill="#18181b"/>
-  <circle cx="256" cy="240" r="140" fill="#1DB954"/>
-  <circle cx="256" cy="240" r="90" fill="#18181b"/>
-  <circle cx="256" cy="240" r="30" fill="#1DB954"/>
-  <rect x="330" y="120" width="16" height="160" rx="8" fill="#1DB954" transform="rotate(15 338 200)"/>
-  <text x="256" y="430" text-anchor="middle" font-family="system-ui,sans-serif" font-weight="bold" font-size="64" fill="#fafafa">CocoSpot</text>
+  <circle cx="256" cy="256" r="160" fill="#1DB954"/>
+  <circle cx="256" cy="256" r="105" fill="#18181b"/>
+  <circle cx="256" cy="256" r="36" fill="#1DB954"/>
 </svg>
