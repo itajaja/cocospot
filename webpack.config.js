@@ -6,6 +6,9 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 class CopyPublicPlugin {
+  constructor(publicPath) {
+    this.publicPath = publicPath;
+  }
   apply(compiler) {
     compiler.hooks.afterEmit.tapAsync("CopyPublicPlugin", (compilation, callback) => {
       const publicDir = path.resolve(__dirname, "public");
@@ -17,6 +20,14 @@ class CopyPublicPlugin {
           if (entry.isDirectory()) {
             fs.mkdirSync(destPath, { recursive: true });
             copyRecursive(srcPath, destPath);
+          } else if (entry.name === "manifest.json") {
+            const manifest = JSON.parse(fs.readFileSync(srcPath, "utf8"));
+            manifest.start_url = this.publicPath;
+            manifest.icons = manifest.icons.map((icon) => ({
+              ...icon,
+              src: icon.src.replace(/^\//, this.publicPath),
+            }));
+            fs.writeFileSync(destPath, JSON.stringify(manifest, null, 2));
           } else {
             fs.copyFileSync(srcPath, destPath);
           }
@@ -70,7 +81,7 @@ export default (env, argv) => {
       publicPath,
       templateParameters: { basePath: publicPath },
     }),
-    new CopyPublicPlugin(),
+    new CopyPublicPlugin(publicPath),
   ],
   devServer: {
     port: 3456,
