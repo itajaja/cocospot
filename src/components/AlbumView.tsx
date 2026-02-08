@@ -72,7 +72,7 @@ export default function AlbumView() {
         <iframe
           src={`https://open.spotify.com/embed/album/${album.spotifyId}?utm_source=generator&theme=0`}
           width="100%"
-          height="352"
+          height="800"
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
           loading="lazy"
           title={`${album.title} Spotify Player`}
