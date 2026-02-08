@@ -35,7 +35,7 @@ export default {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.[contenthash].js",
-    publicPath: "/",
+    publicPath: "./",
     clean: true,
   },
   resolve: {

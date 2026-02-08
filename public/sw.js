@@ -1,5 +1,5 @@
 const CACHE_NAME = "cocospot-v1";
-const PRECACHE_URLS = ["/", "/index.html"];
+const PRECACHE_URLS = ["./", "./index.html"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
@@ -36,7 +36,7 @@ self.addEventListener("fetch", (event) => {
           caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
           return response;
         })
-        .catch(() => caches.match("/index.html"))
+        .catch(() => caches.match("index.html"))
     );
     return;
   }
