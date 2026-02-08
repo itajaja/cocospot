@@ -96,5 +96,68 @@
     "artist": "Ramones",
     "spotifyId": "7u31R0chlCbztAqHlEEQM6",
     "coverUrl": "https://i.scdn.co/image/ab67616d0000b2733935c39bea149ac15c83c41a"
+  },
+  {
+    "id": "images-and-words",
+    "title": "Images and Words",
+    "artist": "Dream Theater",
+    "spotifyId": "2QgGoL5VSQhPHudTObS7zK",
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273f4d11b78efa76496f2acd618"
+  },
+  {
+    "id": "a-night-at-the-opera",
+    "title": "A Night at the Opera",
+    "artist": "Queen",
+    "spotifyId": "1TSZDcvlPtAnekTaItI3qO",
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273a461aa96bd9a8fcd0a492aee"
+  },
+  {
+    "id": "led-zeppelin-iv",
+    "title": "Led Zeppelin IV",
+    "artist": "Led Zeppelin",
+    "spotifyId": "44Ig8dzqOkvkGDzaUof9lK",
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273c8a11e48c91a982d086afc69"
+  },
+  {
+    "id": "ace-of-spades",
+    "title": "Ace of Spades",
+    "artist": "Motörhead",
+    "spotifyId": "3F72lUDbfoet3ncwyJCabV",
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273a2b0293d8044d05202993f9e"
+  },
+  {
+    "id": "painkiller",
+    "title": "Painkiller",
+    "artist": "Judas Priest",
+    "spotifyId": "7LgrhuKnAXpNEv8qzcVd2t",
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b27360db4ca924d17bc6754e89aa"
+  },
+  {
+    "id": "symphony-of-enchanted-lands",
+    "title": "Symphony of Enchanted Lands",
+    "artist": "Rhapsody of Fire",
+    "spotifyId": "346aOAWcE17Sz9pqeENw4I",
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273a301556ae9251d48983709c4"
+  },
+  {
+    "id": "piece-of-mind",
+    "title": "Piece of Mind",
+    "artist": "Iron Maiden",
+    "spotifyId": "7I9Wh2IgvI3Nnr8Z1ZSWby",
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b2732277d1a849a63c7075ec38ff"
+  },
+  {
+    "id": "van-halen",
+    "title": "Van Halen",
+    "artist": "Van Halen",
+    "spotifyId": "7DdEbYFPKTZ8KB4z6L4UnQ",
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b27317dd812df38fed44d6d2036e"
+  },
+  {
+    "id": "discovery",
+    "title": "Discovery",
+    "artist": "Daft Punk",
+    "spotifyId": "2noRn2Aes5aoNVsU6iWThc",
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b2732c25dad9f8fd54652f7ba5df"
   }
 ]
