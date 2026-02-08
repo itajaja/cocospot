@@ -6,7 +6,7 @@ import "./index.css";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <BrowserRouter basename="/cocospot">
+    <BrowserRouter basename={process.env.NODE_ENV === "production" ? "/cocospot" : ""}>
       <App />
     </BrowserRouter>
   </StrictMode>
@@ -14,6 +14,7 @@ createRoot(document.getElementById("root")!).render(
 
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("/sw.js");
+    const base = process.env.NODE_ENV === "production" ? "/cocospot/" : "/";
+    navigator.serviceWorker.register(`${base}sw.js`);
   });
 }

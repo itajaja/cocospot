@@ -30,12 +30,14 @@ class CopyPublicPlugin {
   }
 }
 
-export default {
+export default (env, argv) => {
+  const publicPath = argv.mode === "production" ? "/cocospot/" : "/";
+  return {
   entry: "./src/main.tsx",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.[contenthash].js",
-    publicPath: "/cocospot/",
+    publicPath,
     clean: true,
   },
   resolve: {
@@ -65,6 +67,8 @@ export default {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./index.html",
+      publicPath,
+      templateParameters: { basePath: publicPath },
     }),
     new CopyPublicPlugin(),
   ],
@@ -76,4 +80,4 @@ export default {
       directory: path.resolve(__dirname, "public"),
     },
   },
-};
+};};
