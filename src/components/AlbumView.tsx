@@ -17,14 +17,14 @@ export default function AlbumView() {
   }
 
   return (
-    <div className="h-full flex flex-col pb-4">
-      <div className="rounded-xl bg-zinc-900 overflow-hidden flex-1 min-h-0 flex flex-col">
+    <div className="pb-4">
+      <div className="rounded-xl bg-zinc-900 overflow-hidden">
         <img
           src={album.coverUrl}
           alt={`${album.title} by ${album.artist}`}
-          className="flex-1 min-h-0 w-full object-cover"
+          className="w-full"
         />
-        <div className="p-5 shrink-0">
+        <div className="p-5">
           <h1 className="text-2xl font-extrabold text-white">{album.title}</h1>
           <p className="text-lg text-zinc-400">{album.artist}</p>
         </div>

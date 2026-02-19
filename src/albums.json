@@ -166,5 +166,19 @@
     "artist": "Blind Guardian",
     "spotifyId": "4oruHZSLyTDKPNY2VQIlCS",
     "coverUrl": "https://i.scdn.co/image/ab67616d0000b273e8c8f9410e7fe5fc25910fc2"
+  },
+  {
+    "id": "news-of-the-world",
+    "title": "News of the World",
+    "artist": "Queen",
+    "spotifyId": "3TKTjR4E3LAMfRsPeRsNhT",
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b27328af20e27e04121b00bdf876"
+  },
+  {
+    "id": "in-the-court-of-the-crimson-king",
+    "title": "In the Court of the Crimson King",
+    "artist": "King Crimson",
+    "spotifyId": "75ol9OP8bJaRqzGimpFHDm",
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273da7b326bd7ffa7b6b95b0660"
   }
 ]

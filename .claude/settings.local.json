@@ -42,7 +42,9 @@
       "WebSearch",
       "Write(/tmp/**)",
       "Bash(curl:*)",
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "WebFetch(domain:api.spotify.com)",
+      "Skill(claude-in-chrome)"
     ],
     "deny": [],
     "ask": []
