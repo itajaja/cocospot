@@ -5,14 +5,12 @@ interface AlbumCardProps {
   title: string;
   artist: string;
   coverUrl: string;
+  spotifyId: string;
 }
 
-export default function AlbumCard({ id, title, artist, coverUrl }: AlbumCardProps) {
-  return (
-    <Link
-      to={`/album/${id}`}
-      className="group block rounded-xl bg-zinc-900 hover:bg-zinc-800 transition-all duration-200 hover:scale-[1.03] overflow-hidden"
-    >
+export default function AlbumCard({ id, title, artist, coverUrl, spotifyId }: AlbumCardProps) {
+  const cardContent = (
+    <>
       <div className="aspect-square overflow-hidden">
         <img
           src={coverUrl}
@@ -24,6 +22,24 @@ export default function AlbumCard({ id, title, artist, coverUrl }: AlbumCardProp
         <h2 className="text-base font-bold text-white truncate">{title}</h2>
         <p className="text-sm text-zinc-400 truncate">{artist}</p>
       </div>
-    </Link>
+    </>
+  );
+
+  const cardClass = "group block rounded-xl bg-zinc-900 hover:bg-zinc-800 transition-all duration-200 hover:scale-[1.03] overflow-hidden";
+
+  return (
+    <>
+      <a
+        href={`https://open.spotify.com/album/${spotifyId}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`lg:hidden ${cardClass}`}
+      >
+        {cardContent}
+      </a>
+      <Link to={`/album/${id}`} className={`hidden lg:block ${cardClass}`}>
+        {cardContent}
+      </Link>
+    </>
   );
 }

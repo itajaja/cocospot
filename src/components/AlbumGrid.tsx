@@ -15,6 +15,7 @@ export default function AlbumGrid() {
             title={album.title}
             artist={album.artist}
             coverUrl={album.coverUrl}
+            spotifyId={album.spotifyId}
           />
         ))}
       </div>
