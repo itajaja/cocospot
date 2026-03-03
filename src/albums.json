@@ -180,5 +180,12 @@
     "artist": "King Crimson",
     "spotifyId": "75ol9OP8bJaRqzGimpFHDm",
     "coverUrl": "https://i.scdn.co/image/ab67616d0000b273da7b326bd7ffa7b6b95b0660"
+  },
+  {
+    "id": "toxicity",
+    "title": "Toxicity",
+    "artist": "System Of A Down",
+    "spotifyId": "6jWde94ln40epKIQCd8XUh",
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b27307bc7d2a745636c356b4d0aa"
   }
 ]
