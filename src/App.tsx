@@ -87,6 +87,18 @@ export default function App() {
                 className="border-0"
               />
             </div>
+            <div className="mt-3 px-1 shrink-0">
+              <h2 className="text-lg font-bold text-white truncate">{nowPlaying.title}</h2>
+              {nowPlaying.description && (
+                <p className="text-sm text-zinc-400 mt-1 line-clamp-2">{nowPlaying.description}</p>
+              )}
+              <p className="text-sm text-zinc-300 mt-1 font-medium">{nowPlaying.artist}</p>
+              {nowPlaying.releaseDate && (
+                <p className="text-xs text-zinc-500 mt-1">
+                  {new Date(nowPlaying.releaseDate + "T00:00:00").toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" })}
+                </p>
+              )}
+            </div>
           </div>
         )}
       </div>

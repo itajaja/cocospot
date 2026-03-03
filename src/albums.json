@@ -4,181 +4,233 @@
     "title": "Back in Black",
     "artist": "AC/DC",
     "spotifyId": "6mUdeDZCsExyJLMdAfDuwh",
-    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273ff191d7fbdb5a13eaf84132b"
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273ff191d7fbdb5a13eaf84132b",
+    "description": "Hard rock classic and one of the best-selling albums of all time.",
+    "releaseDate": "1980-07-25"
   },
   {
     "id": "number-of-the-beast",
     "title": "The Number of the Beast",
     "artist": "Iron Maiden",
     "spotifyId": "1GmhZDrn15PUncSANUoteo",
-    "coverUrl": "https://i.scdn.co/image/ab67616d0000b2730910e39b1092e8ec44626aa3"
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b2730910e39b1092e8ec44626aa3",
+    "description": "Iconic heavy metal album featuring Bruce Dickinson's debut as vocalist.",
+    "releaseDate": "1982-03-22"
   },
   {
     "id": "nightfall-in-middle-earth",
     "title": "Nightfall in Middle-Earth",
     "artist": "Blind Guardian",
     "spotifyId": "7EPGJTyG9MQ6gJWANmL4n3",
-    "coverUrl": "https://i.scdn.co/image/ab67616d0000b2735e77d3ce3a4f7f382daaf46f"
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b2735e77d3ce3a4f7f382daaf46f",
+    "description": "Epic power metal concept album based on Tolkien's The Silmarillion.",
+    "releaseDate": "1998-04-28"
   },
   {
     "id": "silence",
     "title": "Silence",
     "artist": "Sonata Arctica",
     "spotifyId": "4gJtPkYcoxDsCJ94RXw5bQ",
-    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273a2a3bc21eee1f7caf85d0226"
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273a2a3bc21eee1f7caf85d0226",
+    "description": "Melodic power metal featuring soaring vocals and symphonic arrangements.",
+    "releaseDate": "2001-06-04"
   },
   {
     "id": "inhuman-rampage",
     "title": "Inhuman Rampage",
     "artist": "DragonForce",
     "spotifyId": "2IKYoYVdXmTQwxBDpOSzpU",
-    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273151810c4b90c95ca4e429773"
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273151810c4b90c95ca4e429773",
+    "description": "Blazing speed metal known for the hit Through the Fire and Flames.",
+    "releaseDate": "2006-01-09"
   },
   {
     "id": "paranoid",
     "title": "Paranoid",
     "artist": "Black Sabbath",
     "spotifyId": "6r7LZXAVueS5DqdrvXJJK7",
-    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273d5fccf9ce08b6a1e7d12a222"
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273d5fccf9ce08b6a1e7d12a222",
+    "description": "Pioneering heavy metal album that defined the genre.",
+    "releaseDate": "1970-09-18"
   },
   {
     "id": "abbey-road",
     "title": "Abbey Road",
     "artist": "The Beatles",
     "spotifyId": "0ETFjACtuP2ADo6LFhL6HN",
-    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273dc30583ba717007b00cceb25"
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273dc30583ba717007b00cceb25",
+    "description": "The Beatles' final recorded masterpiece with the iconic medley.",
+    "releaseDate": "1969-09-26"
   },
   {
     "id": "appetite-for-destruction",
     "title": "Appetite for Destruction",
     "artist": "Guns N' Roses",
     "spotifyId": "28yHV3Gdg30AiB8h8em1eW",
-    "coverUrl": "https://i.scdn.co/image/ab67616d0000b27321ebf49b3292c3f0f575f0f5"
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b27321ebf49b3292c3f0f575f0f5",
+    "description": "Explosive debut featuring Welcome to the Jungle and Sweet Child O' Mine.",
+    "releaseDate": "1987-07-21"
   },
   {
     "id": "let-it-bleed",
     "title": "Let It Bleed",
     "artist": "The Rolling Stones",
     "spotifyId": "4l4u9e9jSbotSXNjYfOugy",
-    "coverUrl": "https://i.scdn.co/image/ab67616d0000b2732af30c881bb23cfb82a8cf99"
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b2732af30c881bb23cfb82a8cf99",
+    "description": "Blues-driven rock with Gimme Shelter and You Can't Always Get What You Want.",
+    "releaseDate": "1969-12-05"
   },
   {
     "id": "mandrake",
     "title": "Mandrake",
     "artist": "Edguy",
     "spotifyId": "2S5whZS0ouI2rHct9VJuK5",
-    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273ed44479d621cb05e1ed6775b"
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273ed44479d621cb05e1ed6775b",
+    "description": "Melodic power metal blending catchy hooks with symphonic elements.",
+    "releaseDate": "2001-02-26"
   },
   {
     "id": "master-of-puppets",
     "title": "Master of Puppets",
     "artist": "Metallica",
     "spotifyId": "2Lq2qX3hYhiuPckC8Flj21",
-    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273668e3aca3167e6e569a9aa20"
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273668e3aca3167e6e569a9aa20",
+    "description": "Thrash metal landmark widely regarded as one of the greatest metal albums.",
+    "releaseDate": "1986-03-03"
   },
   {
     "id": "holy-diver",
     "title": "Holy Diver",
     "artist": "Dio",
     "spotifyId": "2ivNJLSx8Rbvnsvcn01Yt3",
-    "coverUrl": "https://i.scdn.co/image/ab67616d0000b2732457ab409ae106f8ae1dff89"
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b2732457ab409ae106f8ae1dff89",
+    "description": "Ronnie James Dio's solo debut, a cornerstone of classic heavy metal.",
+    "releaseDate": "1983-05-25"
   },
   {
     "id": "kpop-demon-hunters",
     "title": "KPop Demon Hunters (Soundtrack from the Netflix Film)",
     "artist": "KPop Demon Hunters Cast",
     "spotifyId": "14JkAa6IiFaOh5s0nMyMU9",
-    "coverUrl": "https://i.scdn.co/image/ab67616d0000b2734dcb6c5df15cf74596ab25a4"
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b2734dcb6c5df15cf74596ab25a4",
+    "description": "Energetic K-pop soundtrack from the Netflix animated film.",
+    "releaseDate": "2025-06-19"
   },
   {
     "id": "ramones",
     "title": "Ramones",
     "artist": "Ramones",
     "spotifyId": "7u31R0chlCbztAqHlEEQM6",
-    "coverUrl": "https://i.scdn.co/image/ab67616d0000b2733935c39bea149ac15c83c41a"
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b2733935c39bea149ac15c83c41a",
+    "description": "The debut that launched punk rock with raw two-minute anthems.",
+    "releaseDate": "1976-04-23"
   },
   {
     "id": "images-and-words",
     "title": "Images and Words",
     "artist": "Dream Theater",
     "spotifyId": "2QgGoL5VSQhPHudTObS7zK",
-    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273f4d11b78efa76496f2acd618"
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273f4d11b78efa76496f2acd618",
+    "description": "Progressive metal breakthrough featuring Pull Me Under.",
+    "releaseDate": "1992-07-07"
   },
   {
     "id": "a-night-at-the-opera",
     "title": "A Night at the Opera",
     "artist": "Queen",
     "spotifyId": "1TSZDcvlPtAnekTaItI3qO",
-    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273a461aa96bd9a8fcd0a492aee"
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273a461aa96bd9a8fcd0a492aee",
+    "description": "Queen's operatic masterpiece featuring Bohemian Rhapsody.",
+    "releaseDate": "1975-11-21"
   },
   {
     "id": "led-zeppelin-iv",
     "title": "Led Zeppelin IV",
     "artist": "Led Zeppelin",
     "spotifyId": "44Ig8dzqOkvkGDzaUof9lK",
-    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273c8a11e48c91a982d086afc69"
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273c8a11e48c91a982d086afc69",
+    "description": "Legendary album home to Stairway to Heaven.",
+    "releaseDate": "1971-11-08"
   },
   {
     "id": "ace-of-spades",
     "title": "Ace of Spades",
     "artist": "Motörhead",
     "spotifyId": "3F72lUDbfoet3ncwyJCabV",
-    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273a2b0293d8044d05202993f9e"
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273a2b0293d8044d05202993f9e",
+    "description": "Relentless speed and attitude that bridged punk and metal.",
+    "releaseDate": "1980-11-08"
   },
   {
     "id": "painkiller",
     "title": "Painkiller",
     "artist": "Judas Priest",
     "spotifyId": "7LgrhuKnAXpNEv8qzcVd2t",
-    "coverUrl": "https://i.scdn.co/image/ab67616d0000b27360db4ca924d17bc6754e89aa"
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b27360db4ca924d17bc6754e89aa",
+    "description": "Blistering speed metal comeback that redefined Judas Priest.",
+    "releaseDate": "1990-09-03"
   },
   {
     "id": "symphony-of-enchanted-lands",
     "title": "Symphony of Enchanted Lands",
     "artist": "Rhapsody of Fire",
     "spotifyId": "346aOAWcE17Sz9pqeENw4I",
-    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273a301556ae9251d48983709c4"
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273a301556ae9251d48983709c4",
+    "description": "Cinematic symphonic power metal with an epic fantasy narrative.",
+    "releaseDate": "1998-09-01"
   },
   {
     "id": "piece-of-mind",
     "title": "Piece of Mind",
     "artist": "Iron Maiden",
     "spotifyId": "7I9Wh2IgvI3Nnr8Z1ZSWby",
-    "coverUrl": "https://i.scdn.co/image/ab67616d0000b2732277d1a849a63c7075ec38ff"
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b2732277d1a849a63c7075ec38ff",
+    "description": "Iron Maiden classic featuring The Trooper and nicko McBrain's debut.",
+    "releaseDate": "1983-05-16"
   },
   {
     "id": "van-halen",
     "title": "Van Halen",
     "artist": "Van Halen",
     "spotifyId": "7DdEbYFPKTZ8KB4z6L4UnQ",
-    "coverUrl": "https://i.scdn.co/image/ab67616d0000b27317dd812df38fed44d6d2036e"
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b27317dd812df38fed44d6d2036e",
+    "description": "Debut that revolutionized rock guitar with Eddie Van Halen's playing.",
+    "releaseDate": "1978-02-10"
   },
   {
     "id": "discovery",
     "title": "Discovery",
     "artist": "Daft Punk",
     "spotifyId": "2noRn2Aes5aoNVsU6iWThc",
-    "coverUrl": "https://i.scdn.co/image/ab67616d0000b2732c25dad9f8fd54652f7ba5df"
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b2732c25dad9f8fd54652f7ba5df",
+    "description": "Genre-defining electronic album featuring One More Time and Harder, Better, Faster, Stronger.",
+    "releaseDate": "2001-03-12"
   },
   {
     "id": "somewhere-far-beyond",
     "title": "Somewhere Far Beyond",
     "artist": "Blind Guardian",
     "spotifyId": "4oruHZSLyTDKPNY2VQIlCS",
-    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273e8c8f9410e7fe5fc25910fc2"
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273e8c8f9410e7fe5fc25910fc2",
+    "description": "Power metal epic with fantasy-inspired storytelling and choral harmonies.",
+    "releaseDate": "1992-06-29"
   },
   {
     "id": "news-of-the-world",
     "title": "News of the World",
     "artist": "Queen",
     "spotifyId": "3TKTjR4E3LAMfRsPeRsNhT",
-    "coverUrl": "https://i.scdn.co/image/ab67616d0000b27328af20e27e04121b00bdf876"
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b27328af20e27e04121b00bdf876",
+    "description": "Home to the stadium anthems We Will Rock You and We Are the Champions.",
+    "releaseDate": "1977-10-28"
   },
   {
     "id": "in-the-court-of-the-crimson-king",
     "title": "In the Court of the Crimson King",
     "artist": "King Crimson",
     "spotifyId": "75ol9OP8bJaRqzGimpFHDm",
-    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273da7b326bd7ffa7b6b95b0660"
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273da7b326bd7ffa7b6b95b0660",
+    "description": "The album that launched progressive rock as a genre.",
+    "releaseDate": "1969-10-10"
   }
 ]
