@@ -187,5 +187,12 @@
     "artist": "System Of A Down",
     "spotifyId": "6jWde94ln40epKIQCd8XUh",
     "coverUrl": "https://i.scdn.co/image/ab67616d0000b27307bc7d2a745636c356b4d0aa"
+  },
+  {
+    "id": "meliora",
+    "title": "Meliora",
+    "artist": "Ghost",
+    "spotifyId": "74QTwjBLo1eLqpjL320rXX",
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273dbdc0eb120e1b40b9f2abb39"
   }
 ]
