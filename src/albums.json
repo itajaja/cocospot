@@ -194,5 +194,12 @@
     "artist": "Ghost",
     "spotifyId": "74QTwjBLo1eLqpjL320rXX",
     "coverUrl": "https://i.scdn.co/image/ab67616d0000b273dbdc0eb120e1b40b9f2abb39"
+  },
+  {
+    "id": "opus-eponymous",
+    "title": "Opus Eponymous",
+    "artist": "Ghost",
+    "spotifyId": "7xusHmkJUWt1XqPrM3pC9U",
+    "coverUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616d0000b273fae4c3e322d94845c13e2d2c"
   }
 ]
