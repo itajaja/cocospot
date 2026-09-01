@@ -40,10 +40,11 @@ src/
   basePath.ts         # /cocospot/ in production, / in development
   components/
     AlbumGrid.tsx     # Home page - responsive grid of album cards
-    AlbumCard.tsx     # Single album tile; tapping it starts the album
+    AlbumCard.tsx     # Single album tile; tapping it opens the album
     AlbumView.tsx     # Album detail page with the full player
     Player.tsx        # Transport controls, progress, volume
     Lyrics.tsx        # Follow-along lyrics panel (tap a line to jump)
+    TrackList.tsx     # Album track list (tap a song to play it)
     NowPlayingBar.tsx # Persistent mini player on the grid
     Connect.tsx       # Sign-in screen and setup instructions
     icons.tsx         # Inline SVG icons
@@ -58,6 +59,7 @@ src/
     api.ts            # Thin Web API fetch wrapper
     AuthProvider.tsx  # Auth state + access token vending
     PlayerProvider.tsx# Web Playback SDK lifecycle and transport state
+    useAlbumTracks.ts # Album track list, cached in localStorage
     sdk.d.ts          # Typings for the SDK global
 ```
 
@@ -147,7 +149,9 @@ Albums are stored in `src/albums.json` as a flat array. To add one, append an en
 - **Playback** registers the browser itself as a Spotify Connect device named
   "CocoSpot" via the Web Playback SDK. Starting an album is one Web API call
   (`PUT /me/player/play` with a `spotify:album:` context); play/pause, skip,
-  seek and volume are all local SDK calls.
+  seek and volume are all local SDK calls. Nothing autoplays -- opening an
+  album does not start it, and picking a song repeats the play call with
+  `offset.position`, which is the only way to jump to a track by index.
 - **Track metadata** (title, artist, artwork, duration) comes from the SDK's
   `player_state_changed` events, so no Web API metadata endpoints are used and
   `albums.json` stays the only content source.

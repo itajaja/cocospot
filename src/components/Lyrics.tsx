@@ -53,7 +53,7 @@ export default function Lyrics({
     });
   }, [activeIndex]);
 
-  const shell = `lyrics-fade relative overflow-y-auto overscroll-contain rounded-2xl bg-zinc-900/60 ${className}`;
+  const shell = `panel-fade relative overflow-y-auto overscroll-contain rounded-2xl bg-zinc-900/60 ${className}`;
 
   if (!playing) {
     return (

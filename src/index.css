@@ -44,10 +44,10 @@ input[type="range"]:disabled::-moz-range-thumb {
 }
 
 /*
- * Lyrics scroll past the panel edges, so fade them out instead of clipping.
+ * Panel contents scroll past the edges, so fade them out instead of clipping.
  * Tailwind does not prefix mask-image, and older WebKit still needs it.
  */
-.lyrics-fade {
+.panel-fade {
   mask-image: linear-gradient(
     to bottom,
     transparent 0,

@@ -4,15 +4,12 @@ import { usePlayer } from "../spotify/PlayerProvider";
 import { PlayIcon } from "./icons";
 
 export default function AlbumCard({ album }: { album: Album }) {
-  const { playAlbum, currentAlbumId, paused } = usePlayer();
+  const { currentAlbumId, paused } = usePlayer();
   const isCurrent = currentAlbumId === album.spotifyId;
 
   return (
     <Link
       to={`/album/${album.id}`}
-      // Start playback inside the tap itself: iOS only unlocks audio from a
-      // real user gesture, and a navigation would break the chain.
-      onClick={() => void playAlbum(album.spotifyId)}
       className="group block overflow-hidden rounded-xl bg-zinc-900 transition-all duration-200 hover:scale-[1.03] hover:bg-zinc-800"
     >
       <div className="relative aspect-square overflow-hidden">
