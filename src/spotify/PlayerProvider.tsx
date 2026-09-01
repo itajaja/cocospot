@@ -60,7 +60,8 @@ interface PlayerContextValue {
    */
   getPositionMs: () => number;
   volume: number;
-  playAlbum: (spotifyId: string) => Promise<void>;
+  /** Starts the album, optionally at a given track index. */
+  playAlbum: (spotifyId: string, trackIndex?: number) => Promise<void>;
   togglePlay: () => Promise<void>;
   next: () => Promise<void>;
   previous: () => Promise<void>;
@@ -234,7 +235,7 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const playAlbum = useCallback(
-    async (spotifyId: string) => {
+    async (spotifyId: string, trackIndex = 0) => {
       setError(null);
       try {
         // iOS will not produce sound unless the audio element is unlocked
@@ -243,7 +244,7 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
 
         const body = JSON.stringify({
           context_uri: `spotify:album:${spotifyId}`,
-          offset: { position: 0 },
+          offset: { position: trackIndex },
           position_ms: 0,
         });
 

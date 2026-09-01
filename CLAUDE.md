@@ -24,14 +24,16 @@ The Spotify client id is committed in `src/spotify/config.ts`; setting
 - `src/albums.ts` — typed accessors over the JSON
 - `src/basePath.ts` — `/cocospot/` in prod, `/` in dev (shared by router, SW, redirect URI)
 - `src/components/AlbumGrid.tsx` — home screen grid of album cards
-- `src/components/AlbumCard.tsx` — single album tile; tapping starts the album
+- `src/components/AlbumCard.tsx` — single album tile; tapping opens the album
 - `src/components/AlbumView.tsx` — album detail with cover art, player, fullscreen toggle
 - `src/components/Player.tsx` — transport controls, progress, volume
 - `src/components/Lyrics.tsx` — follow-along lyrics panel, toggled from `AlbumView`
+- `src/components/TrackList.tsx` — album track list; tapping a song plays it
 - `src/lyrics/` — LRC parsing, the LRCLIB client with its cache, and the sync hook
 - `src/components/NowPlayingBar.tsx` — mini player pinned to the grid
 - `src/components/Connect.tsx` — sign-in screen
 - `src/spotify/` — auth (PKCE), Web API wrapper, and the Web Playback SDK provider
+- `src/spotify/useAlbumTracks.ts` — album track list, cached in `localStorage`
 - `src/App.tsx` — auth gating + routing (`/` grid, `/album/:id` detail)
 
 ## Adding Albums
@@ -104,6 +106,11 @@ Then replace `ab67616d00001e02` with `ab67616d0000b273` for the 640x640 version.
 - Playback starts with `PUT /me/player/play?device_id=...` using a
   `spotify:album:{spotifyId}` context. Everything after that (pause, skip,
   seek, volume) is a local SDK call, so there is no polling.
+- **Nothing autoplays.** Tapping an album card only opens it; playback starts
+  from the album view's play button or from a song in the track list.
+- Picking a song re-issues that same play call with `offset.position` set to
+  the track's index, because the SDK can skip but cannot jump to an index. The
+  index comes from `GET /albums/{id}/tracks`, which returns playback order.
 - On iOS, `player.activateElement()` must run inside the user gesture, so
-  `AlbumCard` starts playback in its `onClick` rather than in an effect after
-  navigation.
+  every path that starts playback does so in an `onClick`, never in an effect
+  after navigation.
