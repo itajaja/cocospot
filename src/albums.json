@@ -208,5 +208,26 @@
     "artist": "The Prodigy",
     "spotifyId": "13PiGMs22YuX1kq7w8WNGM",
     "coverUrl": "https://i.scdn.co/image/ab67616d0000b273bce53a924b756cbaf8aa245c"
+  },
+  {
+    "id": "machine-head",
+    "title": "Machine Head",
+    "artist": "Deep Purple",
+    "spotifyId": "1EK3a0Yctg4d3nGQzE4Uty",
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b273bc9b44e950d5440ff65ea926"
+  },
+  {
+    "id": "keeper-of-the-seven-keys-pt-2",
+    "title": "Keeper of the Seven Keys, Pt. II",
+    "artist": "Helloween",
+    "spotifyId": "1Z2srVrfTUpqnLLxPcuj2K",
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b27355d506b10646ae83a2ca13bc"
+  },
+  {
+    "id": "destroyer",
+    "title": "Destroyer",
+    "artist": "KISS",
+    "spotifyId": "59plsPcJYFlSA5ImekNQJ0",
+    "coverUrl": "https://i.scdn.co/image/ab67616d0000b2739309dd399ed75be936b8c1b6"
   }
 ]
