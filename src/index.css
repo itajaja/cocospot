@@ -1,1 +1,44 @@
 @import "tailwindcss";
+
+/* Dark form controls (scrollbars, native widgets). */
+:root {
+  color-scheme: dark;
+}
+
+/*
+ * Chrome ignores color-scheme for the unfilled part of a range track once
+ * accent-color is set, so the sliders paint their own fill (see Player.tsx)
+ * and only need a thumb here. Big thumb: this is a toddler's touch target.
+ */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 9999px;
+  background-color: var(--color-zinc-700);
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 1.15rem;
+  width: 1.15rem;
+  border: none;
+  border-radius: 9999px;
+  background: #ffffff;
+  cursor: pointer;
+}
+input[type="range"]::-moz-range-thumb {
+  height: 1.15rem;
+  width: 1.15rem;
+  border: none;
+  border-radius: 9999px;
+  background: #ffffff;
+  cursor: pointer;
+}
+input[type="range"]:disabled::-webkit-slider-thumb {
+  background: var(--color-zinc-600);
+  cursor: default;
+}
+input[type="range"]:disabled::-moz-range-thumb {
+  background: var(--color-zinc-600);
+  cursor: default;
+}

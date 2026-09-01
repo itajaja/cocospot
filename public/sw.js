@@ -1,5 +1,7 @@
-const CACHE_NAME = "cocospot-v1";
-const PRECACHE_URLS = ["/", "/index.html"];
+// Relative URLs resolve against the service worker scope, which is
+// /cocospot/ on GitHub Pages and / in development.
+const CACHE_NAME = "cocospot-v2";
+const PRECACHE_URLS = ["./", "./index.html"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
@@ -36,13 +38,16 @@ self.addEventListener("fetch", (event) => {
           caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
           return response;
         })
-        .catch(() => caches.match("/index.html"))
+        .catch(() => caches.match("./index.html"))
     );
     return;
   }
 
-  // For Spotify embeds and API calls, always go to network (don't cache)
-  if (request.url.includes("spotify.com")) return;
+  // Spotify API/auth calls and the Web Playback SDK script must never be
+  // served from cache.
+  if (request.url.includes("spotify.com") || request.url.includes("sdk.scdn.co")) {
+    return;
+  }
 
   // For album art (scdn.co), cache-first strategy
   if (request.url.includes("i.scdn.co")) {

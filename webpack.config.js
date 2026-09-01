@@ -2,6 +2,7 @@ import path from "path";
 import fs from "fs";
 import { fileURLToPath } from "url";
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import webpack from "webpack";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -82,8 +83,18 @@ export default (env, argv) => {
       templateParameters: { basePath: publicPath },
     }),
     new CopyPublicPlugin(publicPath),
+    new webpack.DefinePlugin({
+      // A PKCE client id is public by design, so it is a build-time value
+      // rather than a secret. See README for how to set it.
+      "process.env.SPOTIFY_CLIENT_ID": JSON.stringify(
+        process.env.SPOTIFY_CLIENT_ID ?? ""
+      ),
+    }),
   ],
   devServer: {
+    // Spotify only accepts 127.0.0.1 (not "localhost") as a loopback
+    // redirect URI, so the dev server has to be reachable there.
+    host: "127.0.0.1",
     port: 3456,
     hot: true,
     historyApiFallback: true,
