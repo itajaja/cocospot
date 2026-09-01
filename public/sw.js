@@ -49,6 +49,12 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
+  // Lyrics keep their own localStorage cache, which re-tries tracks that had
+  // none. Caching the responses here would pin those misses indefinitely.
+  if (request.url.includes("lrclib.net")) {
+    return;
+  }
+
   // For album art (scdn.co), cache-first strategy
   if (request.url.includes("i.scdn.co")) {
     event.respondWith(

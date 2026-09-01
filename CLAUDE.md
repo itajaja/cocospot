@@ -27,6 +27,8 @@ The Spotify client id is committed in `src/spotify/config.ts`; setting
 - `src/components/AlbumCard.tsx` — single album tile; tapping starts the album
 - `src/components/AlbumView.tsx` — album detail with cover art, player, fullscreen toggle
 - `src/components/Player.tsx` — transport controls, progress, volume
+- `src/components/Lyrics.tsx` — follow-along lyrics panel, toggled from `AlbumView`
+- `src/lyrics/` — LRC parsing, the LRCLIB client with its cache, and the sync hook
 - `src/components/NowPlayingBar.tsx` — mini player pinned to the grid
 - `src/components/Connect.tsx` — sign-in screen
 - `src/spotify/` — auth (PKCE), Web API wrapper, and the Web Playback SDK provider
@@ -46,6 +48,25 @@ To find cover URLs, use the Spotify oEmbed API:
 curl -s "https://open.spotify.com/oembed?url=https://open.spotify.com/album/{ALBUM_ID}" | python3 -c "import sys,json; print(json.load(sys.stdin)['thumbnail_url'])"
 ```
 Then replace `ab67616d00001e02` with `ab67616d0000b273` for the 640x640 version.
+
+## Lyrics
+
+- Spotify's Web API has **no lyrics endpoint**; the in-app lyrics come from an
+  internal endpoint that needs the `sp_dc` web cookie. Lyrics here come from
+  [LRCLIB](https://lrclib.net) instead: keyless, CORS-enabled, line-level LRC.
+- Lookup is `/api/get` with track, artist, album and duration, falling back to
+  `/api/search` (retried with edition noise like "- Remastered 2012" stripped).
+  Candidates are scored by duration, since single edits and live versions share
+  a title with the album cut.
+- Results are cached in `localStorage` under `cocospot:lyrics:v1:{trackId}`.
+  Misses are cached too, with a one-week retry window, and `public/sw.js` skips
+  `lrclib.net` so the service worker cannot pin a miss for longer than that.
+- Highlighting reads `getPositionMs()` from `PlayerProvider` on an animation
+  frame and re-renders only when the line changes. The interpolated clock is
+  resynced against `player.getCurrentState()` every 5s, because wall-clock drift
+  shows up in lyrics long before it would show up in a progress bar.
+- Tracks with only unsynced lyrics render without highlighting; instrumentals
+  (flagged, or uploaded as a single blank timed line) say so.
 
 ## GitHub Pages Deployment
 

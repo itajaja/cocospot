@@ -43,9 +43,14 @@ src/
     AlbumCard.tsx     # Single album tile; tapping it starts the album
     AlbumView.tsx     # Album detail page with the full player
     Player.tsx        # Transport controls, progress, volume
+    Lyrics.tsx        # Follow-along lyrics panel (tap a line to jump)
     NowPlayingBar.tsx # Persistent mini player on the grid
     Connect.tsx       # Sign-in screen and setup instructions
     icons.tsx         # Inline SVG icons
+  lyrics/
+    lrc.ts            # LRC parser and active-line lookup
+    lrclib.ts         # LRCLIB client + localStorage cache
+    useSyncedLyrics.ts# Fetches lyrics and follows playback
   spotify/
     config.ts         # Client id, redirect URI, scopes
     pkce.ts           # Code verifier / S256 challenge helpers
@@ -146,8 +151,15 @@ Albums are stored in `src/albums.json` as a flat array. To add one, append an en
 - **Track metadata** (title, artist, artwork, duration) comes from the SDK's
   `player_state_changed` events, so no Web API metadata endpoints are used and
   `albums.json` stays the only content source.
+- **Lyrics** come from [LRCLIB](https://lrclib.net), not Spotify -- the Web API
+  has no lyrics endpoint. It is keyless and CORS-enabled, so the fetch happens
+  in the browser like everything else, and results (including misses) are cached
+  in `localStorage`. Highlighting runs off `getPositionMs()`, a ref read of the
+  interpolated playback clock, so following along costs one re-render per line
+  rather than one per frame.
 - **Tokens** live in `localStorage` and refresh silently, so the sign-in
   happens once rather than every visit.
-- **Styling** is done entirely through Tailwind utility classes -- there is no custom CSS beyond the Tailwind import.
+- **Styling** is done through Tailwind utility classes; `index.css` holds only
+  what utilities cannot express (range-slider thumbs, the lyrics fade mask).
 - **SWC** handles TypeScript/JSX compilation (faster than Babel). Configured in `webpack.config.js` under the `swc-loader` rule with automatic JSX runtime.
 - **historyApiFallback** is enabled on the dev server so that direct navigation to `/album/:id` works without a 404. A production deployment needs equivalent configuration (e.g., redirect all paths to `index.html`).

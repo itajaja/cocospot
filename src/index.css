@@ -42,3 +42,24 @@ input[type="range"]:disabled::-moz-range-thumb {
   background: var(--color-zinc-600);
   cursor: default;
 }
+
+/*
+ * Lyrics scroll past the panel edges, so fade them out instead of clipping.
+ * Tailwind does not prefix mask-image, and older WebKit still needs it.
+ */
+.lyrics-fade {
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    #000 8%,
+    #000 92%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    #000 8%,
+    #000 92%,
+    transparent 100%
+  );
+}
