@@ -34,6 +34,8 @@ function loadSdk(): Promise<typeof Spotify> {
 }
 
 export interface NowPlaying {
+  /** Spotify track id, used as the lyrics cache key. Null for local files. */
+  trackId: string | null;
   trackName: string;
   artistName: string;
   albumName: string;
@@ -51,6 +53,12 @@ interface PlayerContextValue {
   currentAlbumId: string | null;
   paused: boolean;
   positionMs: number;
+  /**
+   * Playback position read straight from the interpolation ref. `positionMs`
+   * only ticks four times a second; lyric highlighting needs finer grain
+   * without re-rendering the tree on every frame.
+   */
+  getPositionMs: () => number;
   volume: number;
   playAlbum: (spotifyId: string) => Promise<void>;
   togglePlay: () => Promise<void>;
@@ -89,6 +97,8 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
   const deviceIdRef = useRef<string | null>(null);
   // Position only arrives on state changes, so interpolate between them.
   const positionRef = useRef({ positionMs: 0, at: Date.now() });
+  const pausedRef = useRef(true);
+  const durationRef = useRef(0);
 
   const [ready, setReady] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -132,10 +142,12 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
             setNowPlaying(null);
             setCurrentAlbumId(null);
             setPaused(true);
+            pausedRef.current = true;
             return;
           }
           const track = state.track_window.current_track;
           setNowPlaying({
+            trackId: track.id,
             trackName: track.name,
             artistName: track.artists.map((a) => a.name).join(", "),
             albumName: track.album.name,
@@ -146,6 +158,8 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
             albumIdFromUri(state.context.uri) ?? albumIdFromUri(track.album.uri)
           );
           setPaused(state.paused);
+          pausedRef.current = state.paused;
+          durationRef.current = state.duration || track.duration_ms;
           positionRef.current = { positionMs: state.position, at: Date.now() };
           setPositionMs(state.position);
         });
@@ -181,14 +195,32 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
     };
   }, [status, getAccessToken, logout]);
 
+  const getPositionMs = useCallback(() => {
+    const { positionMs: base, at } = positionRef.current;
+    const elapsed = pausedRef.current ? 0 : Date.now() - at;
+    const limit = durationRef.current || Number.POSITIVE_INFINITY;
+    return Math.min(base + elapsed, limit);
+  }, []);
+
+  useEffect(() => {
+    if (paused || !nowPlaying) return;
+    const id = window.setInterval(() => setPositionMs(getPositionMs()), 250);
+    return () => window.clearInterval(id);
+  }, [paused, nowPlaying, getPositionMs]);
+
+  // Interpolating off the wall clock drifts away from the audio clock, and a
+  // lyric line lands visibly early long before a progress bar would look wrong.
   useEffect(() => {
     if (paused || !nowPlaying) return;
     const id = window.setInterval(() => {
-      const { positionMs: base, at } = positionRef.current;
-      setPositionMs(Math.min(base + (Date.now() - at), nowPlaying.durationMs));
-    }, 250);
+      void playerRef.current?.getCurrentState().then((state) => {
+        if (!state || state.paused) return;
+        if (Math.abs(state.position - getPositionMs()) < 250) return;
+        positionRef.current = { positionMs: state.position, at: Date.now() };
+      });
+    }, 5000);
     return () => window.clearInterval(id);
-  }, [paused, nowPlaying]);
+  }, [paused, nowPlaying, getPositionMs]);
 
   const waitForDevice = useCallback(async (timeoutMs = 15_000) => {
     const start = Date.now();
@@ -291,6 +323,7 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
         currentAlbumId,
         paused,
         positionMs,
+        getPositionMs,
         volume,
         playAlbum,
         togglePlay,
