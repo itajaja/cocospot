@@ -15,7 +15,7 @@ A kid-friendly album browser that plays Spotify audio in its own player -- no Sp
 
 ```sh
 npm install
-SPOTIFY_CLIENT_ID=your_client_id npm run dev
+npm run dev
 ```
 
 The dev server starts at **http://127.0.0.1:3456** with hot reload and `historyApiFallback` enabled for client-side routing.
@@ -67,24 +67,25 @@ src/
 
 ## Spotify Setup
 
-The app needs a Spotify app of your own. This takes about two minutes.
+The client id of the CocoSpot Spotify app is committed in
+`src/spotify/config.ts`, so nothing needs configuring to build or run. A PKCE
+client id is a public identifier, not a secret -- it ships in the bundle by
+design, and no client secret is used anywhere in this flow.
 
-1. Create an app at [developer.spotify.com/dashboard](https://developer.spotify.com/dashboard).
-2. Add both redirect URIs, exactly:
-   - `https://giacomotag.io/cocospot/` (production)
-   - `http://127.0.0.1:3456/` (development -- Spotify does not accept the
-     hostname `localhost`)
-3. Under "Which API/SDKs are you planning to use", tick **Web API** and
-   **Web Playback SDK**.
-4. Copy the client id into the build:
-   - Locally: `SPOTIFY_CLIENT_ID=... npm run dev`
-   - On GitHub Pages: repository **Settings -> Secrets and variables ->
-     Actions -> Variables**, add `SPOTIFY_CLIENT_ID`. The deploy workflow
-     passes it to the build.
-5. Add every listener under **User Management** in the app settings.
+The Spotify app it points at must have, in
+[the dashboard](https://developer.spotify.com/dashboard):
 
-A PKCE client id is a public identifier, not a secret -- it ships in the
-bundle by design, and no client secret is used anywhere.
+- Both redirect URIs registered **exactly**:
+  - `https://giacomotag.io/cocospot/` (production)
+  - `http://127.0.0.1:3456/` (development -- Spotify does not accept the
+    hostname `localhost`)
+- **Web API** and **Web Playback SDK** ticked under "Which API/SDKs are you
+  planning to use".
+- Every listener added by email under **User Management**.
+
+To build against a different Spotify app, set `SPOTIFY_CLIENT_ID` in the
+environment (`SPOTIFY_CLIENT_ID=... npm run dev`), or as a repository variable
+of that name for the deploy workflow. It overrides the committed default.
 
 ### Requirements and limits
 

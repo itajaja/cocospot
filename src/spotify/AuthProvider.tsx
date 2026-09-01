@@ -17,9 +17,8 @@ import {
   saveTokens,
   type Tokens,
 } from "./auth";
-import { CLIENT_ID } from "./config";
 
-type AuthStatus = "loading" | "unconfigured" | "logged-out" | "logged-in";
+type AuthStatus = "loading" | "logged-out" | "logged-in";
 
 interface AuthContextValue {
   status: AuthStatus;
@@ -38,9 +37,7 @@ const REFRESH_MARGIN_MS = 60_000;
 export function AuthProvider({ children }: { children: ReactNode }) {
   const navigate = useNavigate();
   const location = useLocation();
-  const [status, setStatus] = useState<AuthStatus>(
-    CLIENT_ID ? "loading" : "unconfigured"
-  );
+  const [status, setStatus] = useState<AuthStatus>("loading");
   const [error, setError] = useState<string | null>(null);
   const tokensRef = useRef<Tokens | null>(null);
   const refreshRef = useRef<Promise<Tokens> | null>(null);
@@ -57,7 +54,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   useEffect(() => {
-    if (!CLIENT_ID) return;
     let cancelled = false;
 
     (async () => {

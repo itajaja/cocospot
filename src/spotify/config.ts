@@ -1,8 +1,12 @@
 import { BASE_PATH } from "../basePath";
 
-// A PKCE client id is a public identifier, not a secret -- it ships in the
-// bundle by design. Set SPOTIFY_CLIENT_ID at build time (see README).
-export const CLIENT_ID = process.env.SPOTIFY_CLIENT_ID;
+// The CocoSpot Spotify app. A PKCE client id is a public identifier, not a
+// secret -- it ships in the bundle by design and there is no client secret
+// anywhere in this flow. Set SPOTIFY_CLIENT_ID at build time to point a build
+// at a different Spotify app.
+const DEFAULT_CLIENT_ID = "04300d0084fd4bb0b52b359a65117da5";
+
+export const CLIENT_ID = process.env.SPOTIFY_CLIENT_ID || DEFAULT_CLIENT_ID;
 
 // Must match a redirect URI registered on the Spotify app, exactly.
 // Production: https://giacomotag.io/cocospot/   Dev: http://127.0.0.1:3456/

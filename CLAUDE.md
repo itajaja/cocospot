@@ -15,8 +15,8 @@ Kid-friendly album-driven Spotify player. No backend. Albums are defined in a JS
 - `npm run build` — production build to `dist/`
 - `npm run typecheck` — `tsc --noEmit`
 
-Both `dev` and `build` read `SPOTIFY_CLIENT_ID` from the environment; without
-it the app renders setup instructions instead of the album grid.
+The Spotify client id is committed in `src/spotify/config.ts`; setting
+`SPOTIFY_CLIENT_ID` in the environment overrides it for a build.
 
 ## Project Structure
 
@@ -28,7 +28,7 @@ it the app renders setup instructions instead of the album grid.
 - `src/components/AlbumView.tsx` — album detail with cover art, player, fullscreen toggle
 - `src/components/Player.tsx` — transport controls, progress, volume
 - `src/components/NowPlayingBar.tsx` — mini player pinned to the grid
-- `src/components/Connect.tsx` — sign-in screen / setup instructions
+- `src/components/Connect.tsx` — sign-in screen
 - `src/spotify/` — auth (PKCE), Web API wrapper, and the Web Playback SDK provider
 - `src/App.tsx` — auth gating + routing (`/` grid, `/album/:id` detail)
 
@@ -61,7 +61,8 @@ Then replace `ab67616d00001e02` with `ab67616d0000b273` for the 640x640 version.
 ## Spotify Playback Notes
 
 - Auth is **Authorization Code with PKCE**, run entirely in the browser. No
-  client secret exists; the client id is public by design and is injected by
+  client secret exists; the client id is public by design, committed as the
+  default in `src/spotify/config.ts`, and overridable at build time via
   webpack's `DefinePlugin` from `SPOTIFY_CLIENT_ID`.
 - Redirect URIs must be registered on the Spotify app *exactly*:
   `https://giacomotag.io/cocospot/` and `http://127.0.0.1:3456/`. Spotify no

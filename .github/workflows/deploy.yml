@@ -28,8 +28,8 @@ jobs:
 
       - run: npm run build
         env:
-          # Public PKCE client id -- set as a repository variable
-          # (Settings -> Secrets and variables -> Actions -> Variables).
+          # Optional override for the client id committed in
+          # src/spotify/config.ts. Unset is fine -- the default is used.
           SPOTIFY_CLIENT_ID: ${{ vars.SPOTIFY_CLIENT_ID }}
 
       - run: cp dist/index.html dist/404.html
